@@ -114,30 +114,50 @@ console.log(enKucuk);
 console.log(enBuyuk);
 // 3b çözümü:
 
-function ucebolunenlerintoplam(dizi) {
-  let bolunenler = [];
-  dizi.forEach(function(sayi) {
+const uceTamBolunenler = [];
+  sayilar.forEach(function(sayi) {
 if (sayi %3 === 0) {
-  bolunenler.push(sayi);
+  uceTamBolunenler.push(sayi);
 }
 });
-return bolunenler;
-} console.log(ucebolunenlerintoplam(sayilar));
+console.log(uceTamBolunenler);
 // 3c çözümü:
 
-/* kodlar buraya */
+const uceBolunenlerinToplami = uceTamBolunenler.reduce((ilk, son) => ilk + son ,0);
+console.log(uceBolunenlerinToplami);
 
 // 3d çözümü
 
-/* kodlar buraya */
+const  besyuzdenKucuksayilar = sayilar.filter((sayi) => sayi < 500);
+console.log(besyuzdenKucuksayilar);
 
 // 3e çözümü
 
-/* kodlar buraya */
+const siraliSayilar = besyuzdenKucuksayilar.sort((a, b) => a - b);
+console.log(siraliSayilar);
 
 // 3f çözümü
+const tekraredenSayilar = [];
+const sayiSayaci = {};
 
-/* kodlar buraya */
+
+for (let i = 0; i < sayilar.length; i++) {
+  const sayi = sayilar[i];
+
+  if (sayiSayaci[sayi]) {
+    sayiSayaci[sayi]++;
+  } else {
+    sayiSayaci[sayi] = 1;
+  }
+}
+
+for (let s in sayiSayaci) {
+  if (sayiSayaci[s] > 1) {
+    tekraredenSayilar.push(`${s} sayısı ${sayiSayaci[s]} kere tekrar edilmiştir`);
+  }
+}
+
+console.log(tekraredenSayilar);
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
