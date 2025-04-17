@@ -114,8 +114,15 @@ console.log(enKucuk);
 console.log(enBuyuk);
 // 3b çözümü:
 
-/* kodlar buraya */
-
+function ucebolunenlerintoplam(dizi) {
+  let bolunenler = [];
+  dizi.forEach(function(sayi) {
+if (sayi %3 === 0) {
+  bolunenler.push(sayi);
+}
+});
+return bolunenler;
+} console.log(ucebolunenlerintoplam(sayilar));
 // 3c çözümü:
 
 /* kodlar buraya */
